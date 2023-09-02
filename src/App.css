@@ -1,0 +1,59 @@
+.nav-ul li{
+  padding: 2rem;
+
+}
+.nav-ul a{
+  text-decoration: none;
+  color: white;
+  font-family: Garamond, serif;
+  font-size: 2em;
+  width: 100%;
+}
+.nav-ul{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgb(12, 12, 12);
+  margin:auto;
+}
+
+footer{
+  text-align: center;
+  width: 100%;
+  color: white;
+  background-color: rgb(5, 5, 5);
+  font-size: 1rem;
+  margin:auto;
+  /* padding: 1rem; */
+  position: absolute;
+  bottom: 0px;
+}
+
+
+/* Sigmup form */
+.SignupForm{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: aqua;
+  margin: auto;
+  width: 30%;
+  margin-top: 10vh;
+  padding-bottom: 10vh;
+}
+.SignupForm input{
+  /* display: inline-block; it is inline-block by default so dont worry */
+  height: 2rem;
+  width: 50%;
+  margin: 1em;
+}
+
+.SignupForm button{
+  margin-top: 2rem;
+  padding: 1em;
+  border-radius: 1rem;
+border-color: 4px solid black;
+}
+
+
+
