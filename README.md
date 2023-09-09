@@ -6,8 +6,6 @@
 # Quick Look
 <img width="1440" alt="image" src="https://github.com/GiIrendra/Khulja_SimSim/assets/96494472/bbff26ae-9e67-4581-b6ed-299c7ad68304"># Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Available Scripts
 
 In the project directory, you can run:
