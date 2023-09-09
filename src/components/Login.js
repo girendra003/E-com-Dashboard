@@ -5,6 +5,7 @@ const Login = () => {
   const navigate = useNavigate();
   const [email,setmail] = useState('');
   const [password,setPassword] = useState('');
+//----------------confirming data form database------------------------
       const collectData = async()=>{
         const info = await fetch('http://localhost:4000/login',(
           {
@@ -14,7 +15,6 @@ const Login = () => {
           }
         )),
         data=await  info.json();
-        // console.log(data);
         if(data.email===email){
           sessionStorage.setItem('user',JSON.stringify(data));
             navigate('/')
