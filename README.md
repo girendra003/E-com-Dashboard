@@ -5,7 +5,8 @@
 
 # Quick Look
 <img width="1440" alt="image" src="https://github.com/GiIrendra/Khulja_SimSim/assets/96494472/bbff26ae-9e67-4581-b6ed-299c7ad68304">
-
+![Alt text](image-1.png)
+![Alt text](image-2.png)
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
