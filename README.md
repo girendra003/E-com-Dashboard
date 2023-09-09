@@ -4,7 +4,7 @@
 3. This is all about Signup login and logout dynamiccally
 
 # Quick Look
-![Alt text][Khullja_Sim_Sim/front-end/image.png]
+<img width="1440" alt="image" src="https://github.com/GiIrendra/Khulja_SimSim/assets/96494472/bbff26ae-9e67-4581-b6ed-299c7ad68304">
 
 # Getting Started with Create React App
 
