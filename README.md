@@ -1,3 +1,11 @@
+# This is a Mern based project and it contaions-
+1. Backend - Nodejs, ExpressJs & MongoDB (MERN Stack)
+2. Frontend - ReactJS with Redux for state management
+3. This is all about Signup login and logout dynamiccally
+
+# Quick Look
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
