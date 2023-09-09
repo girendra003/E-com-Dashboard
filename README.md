@@ -4,7 +4,7 @@
 3. This is all about Signup login and logout dynamiccally
 
 # Quick Look
-![Alt text][image.png]
+/Users/girendrasinsinwar/Desktop/5th sem/Node/ReactProjLogin/Khullja_Sim_Sim/front-end/image.png
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
