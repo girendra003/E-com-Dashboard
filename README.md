@@ -4,7 +4,7 @@
 3. This is all about Signup login and logout dynamiccally
 
 # Quick Look
-![Alt text](image.png)
+![Alt text][Khullja_Sim_Sim/front-end/image.png]
 
 # Getting Started with Create React App
 
@@ -76,3 +76,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+[def]: image.png
