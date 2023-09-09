@@ -55,5 +55,24 @@ footer{
 border-color: 4px solid black;
 }
 
-
-
+/* login---------------------------------------------- */
+.login{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: aqua;
+  margin: auto;
+  width: 30%;
+  margin-top: 10vh;
+  padding-bottom: 10vh;
+}
+.login input, button{
+  margin-top: 10%;
+  height: 2rem;
+  width: 50%;
+}
+.login button{
+  border: 2px solid black;
+  border-radius: 10px;
+}
