@@ -9,7 +9,7 @@
 <img width="1439" alt="image-1" src="https://github.com/GiIrendra/Khulja_SimSim/assets/96494472/d562c5a5-1fa9-450a-963b-196e77a6023a">
 
 <img width="1436" alt="image-2" src="https://github.com/GiIrendra/Khulja_SimSim/assets/96494472/ebc67b46-9d12-4167-a463-ae4f393ae4e9">
-![Alt text](<Screenshot 2023-09-10 at 10.23.22 AM.png>)
+![Alt text](<ig.png>)
 
 # Getting Started with Create React App
 
