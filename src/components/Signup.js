@@ -18,7 +18,7 @@ const Signup = () => {
         if (auth) {
             Navigate('/')
         }
-    })
+    },[Navigate])
 
 
     //Sending data to database  **************************

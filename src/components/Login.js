@@ -1,11 +1,19 @@
-import React, { useState} from "react";
+import React, { useState,useEffect} from "react";
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-  const navigate = useNavigate();
   const [email,setmail] = useState('');
   const [password,setPassword] = useState('');
-//----------------confirming data form database------------------------
+//=------------------conditions=------------------------
+    const navigate = useNavigate();
+    useEffect(() => {
+        let auth = sessionStorage.getItem('user');
+        if (auth) {
+            navigate('/')
+        }
+    },[navigate])
+
+//=----------------confirming data form database------------------------
       const collectData = async()=>{
         const info = await fetch('http://localhost:4000/login',(
           {
@@ -14,10 +22,11 @@ const Login = () => {
             body : JSON.stringify({email,password})
           }
         )),
+
         data=await  info.json();
         if(data.email===email){
           sessionStorage.setItem('user',JSON.stringify(data));
-            navigate('/')
+          navigate('/')
         }
         else if(data.result==='404'){
           alert("Invalid Credentials")
