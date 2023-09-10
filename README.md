@@ -6,8 +6,7 @@
 # Quick Look
 <img width="1440" alt="Screenshot 2023-09-10 at 10 27 44 AM" src="https://github.com/GiIrendra/Khulja_SimSim/assets/96494472/05af3f59-b275-45a1-8911-3bb8b8fec703">
 
-<img width="1439" alt="image-1" src="https://github.com/GiIrendra/Khulja_SimSim/assets/96494472/d562c5a5-1fa9-450a-963b-196e77a6023a">
-
+<img width="1430" alt="Screenshot 2023-09-10 at 10 29 46 AM" src="https://github.com/GiIrendra/Khulja_SimSim/assets/96494472/b5675e32-f80e-4b7d-a89b-ca44c27e814b">
 <img width="1436" alt="image-2" src="https://github.com/GiIrendra/Khulja_SimSim/assets/96494472/ebc67b46-9d12-4167-a463-ae4f393ae4e9">
 
 
