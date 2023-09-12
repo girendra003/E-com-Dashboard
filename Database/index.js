@@ -60,4 +60,13 @@ app.delete('/delete/:id',async(req,resp)=>{
     resp.end();
 })
 
+app.get('/products/:id',async(req,resp)=>{
+    const result = await product.findOne({_id:req.params.id});
+    if(result){
+        resp.send(result);
+    }else{
+        resp.send({result:'404'})
+    }
+ })
+
 app.listen(4000);

@@ -7,12 +7,17 @@ export default function Product() {
     getProducts();
   }, []);
 
+// -------------------------------------api to get products
   const getProducts = async () => {
     const result = await fetch("http://localhost:4000/products");
     const data = await result.json();
-    setItem(data);
+    if(data.length>=1){
+      setItem(data);
+    }else{
+      setItem([])
+    }
   };
-
+// -------------------------------------api to delete products
   const deleteProduct = async (id) => {
     let result = await fetch(`http://localhost:4000/delete/${id}`, {
       method: "Delete",
@@ -24,7 +29,7 @@ export default function Product() {
   };
   const navigate = useNavigate();
   const navToUpdate=(id)=>{
-    navigate(`/update/id`);
+    navigate(`/update/${id}`);
   }
   return (
     <>
