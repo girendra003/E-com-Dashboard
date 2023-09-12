@@ -1,6 +1,7 @@
 const express = require('express');
 require('./db/config.js')
 const user = require('./db/user.js');
+const product = require('./db/product.js')
 const cors = require('cors');
 const app = express();
 
@@ -34,6 +35,28 @@ app.post('/login',async(req,resp)=>{
     else{
         resp.send({result:'notFilled'})
     }
+    resp.end();
+})
+
+app.post('/add-product',async(req,resp)=>{
+    const result = new product(req.body);
+    const data =await result.save();
+    resp.send(data);
+    resp.end();
+})
+
+app.get('/products',async(req,resp)=>{
+    let result =  await  product.find();
+    if(result.length>0){
+        resp.send(result)
+    }else{
+        resp.send({result:'404'});
+    }
+})
+
+app.delete('/delete/:id',async(req,resp)=>{
+    const result =  await product.deleteOne({_id: req.params.id});
+    resp.send(result);
     resp.end();
 })
 

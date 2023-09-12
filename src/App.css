@@ -1,3 +1,5 @@
+
+
 /*-----------setup logo ------------- */
 .logoInfi{
   position: absolute;
@@ -40,8 +42,8 @@ footer{
 }
 
 
-/* Sigmup form */
-.SignupForm{
+/*------------------------- Sigmup form---------- -------------*/
+.SignupForm ,.product{ 
   display:flex;
   flex-direction: column;
   align-items: center;
@@ -50,19 +52,24 @@ footer{
   width: 30%;
   margin-top: 10vh;
   padding-bottom: 10vh;
+  border-radius: 85px;
 }
-.SignupForm input{
+.SignupForm input, .product input{
   /* display: inline-block; it is inline-block by default so dont worry */
   height: 2rem;
   width: 50%;
   margin: 1em;
+  border-radius: 10px;
+
 }
 
-.SignupForm button{
+.SignupForm button, .product button{
   margin-top: 2rem;
-  padding: 1em;
   border-radius: 1rem;
-border-color: 4px solid black;
+  width: 30%;
+  background: #000;
+  color: wheat;
+  border-color: 4px solid black;
 }
 
 /* login---------------------------------------------- */
@@ -76,16 +83,47 @@ border-color: 4px solid black;
   width: 30%;
   margin-top: 10vh;
   padding-bottom: 10vh;
+  border-radius: 85px
 }
-.login input, button{
-  margin-top: 10%;
+.login input{
+  border-radius: 10px;
+  margin-top: 5%;
   height: 2rem;
   width: 50%;
 }
 .login button{
+  margin-top: 5%;
   border: 2px solid black;
   border-radius: 10px;
+  width: 30%;
+  background: #000;
+  color: aliceblue;
+}
+
+/*-------------- invalid input field in add items ------------*/
+.invalid-input {
+  color: red;
+  display: inline-block;
+  margin-top: -12px;
+  margin-left: -140px;
 }
 
 
-
+/* ------Align product --------------*/
+.product-list {
+  text-align: center;
+  margin-top: 5%;
+}
+.product-list ul li{
+  font-size: x-large;
+  display: inline-block;
+  text-decoration: none;
+  border: 2px solid aqua;
+  width: 15%;
+}
+.product-list ul{
+  margin: 0px;
+}
+#btp{
+  margin-left: 10px;
+}

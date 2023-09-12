@@ -42,7 +42,7 @@ const Login = () => {
         <h1>!! Login !!</h1>
           <input type="email" onChange={(e)=>setmail(e.target.value)} placeholder="Enter your email id !!!" />
           <input type="password" onChange={(e)=>setPassword(e.target.value)} placeholder="Enter your password !!!" />
-          <button onClick={collectData}>Login</button>
+          <button id="login-btn" onClick={collectData}>Login</button>
       </div>
     </>
   );
