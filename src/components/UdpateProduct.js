@@ -1,57 +1,86 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
 function Update_Product() {
   // ------------------------------initilizing variable having useStats
-    const [name,setName] = useState("");
-    const [price,setPrice] = useState("");
-    const [category,setCategory] = useState("");
-    const [company,setCompany] = useState("");
-  
-    const paramsId = useParams();
+  const [name, setName] = useState("");
+  const [price, setPrice] = useState("");
+  const [category, setCategory] = useState("");
+  const [company, setCompany] = useState("");
+  const paramsId = useParams();
+  const navigate=useNavigate();
 
-    // -----------------------------fetching products a.c.t to id of product  
-    useEffect(() => {
-      const getProductDetails = async () => {
-        const result = await fetch(`http://localhost:4000/products/${paramsId.id}`);
-        const data = await result.json();
-        setName(data.name);
-        setPrice(data.price);
-        setCategory(data.category);
-        setCompany(data.company)
-        console.log(data);
-        console.log(data.name);
-        console.log(name,price,category,company);
-      };
-      getProductDetails(); // Call the function inside useEffect
-    }, [paramsId,name,category,price,company]);
-  
-    
-    
-    const updateProduct=async()=>{
-      console.log(name,price,category,company)
+
+  useEffect(() => {
+    getProductDetails(); // Call the function inside useEffect
+  }, []);
+
+  // ----------------------------------getting details of particular product by passing id as parameter in url
+  const getProductDetails = async () => {
+    const result = await fetch(`http://localhost:4000/products/${paramsId.id}`);
+    const data = await result.json();
+    setName(data.name);
+    setPrice(data.price);
+    setCategory(data.category);
+    setCompany(data.company);
+    console.log(name, price, category, company);
+  };
+  //---------------------------------------------------updating product details
+  const updateProduct = async () => {
+    const result = await fetch(`http://localhost:4000/update/${paramsId.id}`, {
+      method: "PUT", 
+      headers: {
+        "Content-Type": "application/json", 
+      },
+      body: JSON.stringify({ name, price, category, company }), 
+    });
+
+    const data = await result.json();
+    if(data.modifiedCount===1){
+      alert("product updated successfully");
+      navigate("/")
     }
+  };
 
   return (
-    <div className='product' >
-        <h1>Update product</h1>
-        <input onChange={(e)=>setName(e.target.value)} value={name} type="text" placeholder='Enter product name'/>
-        {/* {error && !name && <span className='invalid-input'><b>Enter valid name</b></span>} */}
-        {/*!!!   we are doing "and operation" exexution    !!! */}
+    <div className="product">
+      <h1>Update product</h1>
+      <input
+        onChange={(e) => setName(e.target.value)}
+        value={name}
+        type="text"
+        placeholder="Enter product name"
+      />
+      {/* {error && !name && <span className='invalid-input'><b>Enter valid name</b></span>} */}
+      {/*!!!   we are doing "and operation" exexution    !!! */}
 
-        <input onChange={(e)=>setPrice(e.target.value)} value={price} type="text" placeholder='Enter product price'/>
-        {/* {error && !price && <span className='invalid-input'><b>Enter valid price</b></span>} */}
+      <input
+        onChange={(e) => setPrice(e.target.value)}
+        value={price}
+        type="text"
+        placeholder="Enter product price"
+      />
+      {/* {error && !price && <span className='invalid-input'><b>Enter valid price</b></span>} */}
 
-        <input onChange={(e)=>setCategory(e.target.value)} value={category} type="text" placeholder='Enter product category'/>
-        {/* {error && !category && <span className='invalid-input'><b>Enter valid category</b></span>} */}
+      <input
+        onChange={(e) => setCategory(e.target.value)}
+        value={category}
+        type="text"
+        placeholder="Enter product category"
+      />
+      {/* {error && !category && <span className='invalid-input'><b>Enter valid category</b></span>} */}
 
-        <input onChange={(e)=>setCompany(e.target.value)} value={company} type="text" placeholder='Enter product company'/> 
-        {/* {error && !company && <span className='invalid-input'><b>Enter valid company</b></span>} */}
+      <input
+        onChange={(e) => setCompany(e.target.value)}
+        value={company}
+        type="text"
+        placeholder="Enter product company"
+      />
+      {/* {error && !company && <span className='invalid-input'><b>Enter valid company</b></span>} */}
 
-        <button onClick={updateProduct}>Submit</button>
-
+      <button onClick={updateProduct}>Submit</button>
     </div>
-  )
+  );
 }
 
 export default Update_Product;
@@ -76,8 +105,7 @@ export default Update_Product;
 //       result = await result.json();
 //       console.log(result)
 //     }
-    
-    
+
 //     const updateProduct=async()=>{
 //       console.log(name,price,category,company)
 //       // if(!name || !price || !category || ! company){
@@ -112,7 +140,7 @@ export default Update_Product;
 //         <input onChange={(e)=>setCategory(e.target.value)} type="text" placeholder='Enter product category'/>
 //         {/* {error && !category && <span className='invalid-input'><b>Enter valid category</b></span>} */}
 
-//         <input onChange={(e)=>setCompany(e.target.value)} type="text" placeholder='Enter product company'/> 
+//         <input onChange={(e)=>setCompany(e.target.value)} type="text" placeholder='Enter product company'/>
 //         {/* {error && !company && <span className='invalid-input'><b>Enter valid company</b></span>} */}
 
 //         <button onClick={updateProduct}>Submit</button>

@@ -24,8 +24,10 @@ const Login = () => {
         )),
 
         data=await  info.json();
-        if(data.email===email){
-          sessionStorage.setItem('user',JSON.stringify(data));
+        console.log(data);
+        if(data.user.email===email){
+          sessionStorage.setItem('user',JSON.stringify(data.user));
+          sessionStorage.setItem('token',JSON.stringify(data.auth));
           navigate('/')
         }
         else if(data.result==='404'){

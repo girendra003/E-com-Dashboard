@@ -1,72 +1,107 @@
-const express = require('express');
-require('./db/config.js')
-const user = require('./db/user.js');
-const product = require('./db/product.js')
-const cors = require('cors');
+const express = require("express");
+require("./db/config.js");
+const userModal = require("./db/user.js");
+const product = require("./db/product.js");
+const cors = require("cors");
 const app = express();
+// --------------------------------jwt authentication
+const Jwt = require("jsonwebtoken");
+const jwtKey = "e-comm";
 
 app.use(cors());
-app.use(express.json())
+app.use(express.json());
 
-app.get('/',async(req,resp)=>{
-    const result =await user.find();
-    resp.send(result)
-    resp.end();
-})
-app.post('/register',async(req,resp)=>{
-    let data = new user(req.body);
-    let result = await data.save();
-    result = result.toObject();
-    delete result['password'];
-    resp.send(result)
-    resp.end();
+app.get("/", async (req, resp) => {
+  const result = await userModal.find();
+  resp.send(result);
+  resp.end();
+});
+app.post("/register", async (req, resp) => {
+  let data = new userModal(req.body);
+  let result = await data.save();
+  result = result.toObject();
+  delete result["password"];
+  if(result){
+    Jwt.sign({result},jwtKey,{expiresIn:"2hr"},(err,token)=>{
+      if(err){
+        resp.send({ result: "Someting went wrong, Please try again later" });
+      }else{
+        resp.send({ result, auth: token });
+
+      }
+    })
+  }
 });
 
-app.post('/login',async(req,resp)=>{
-    if(req.body.email && req.body.password){
-        const result = await user.findOne(req.body).select('-password');
-        if(result){
-        resp.send(result);
+app.post("/login", async (req, resp) => {
+  if (req.body.email && req.body.password) {
+    const user = await userModal.findOne(req.body).select("-password");
+    if (userModal) {
+      Jwt.sign({ user }, jwtKey, { expiresIn: "2h" }, (err, token) => {
+        if (err) {
+          resp.send({ result: "Someting went wrong, Please try again later" });
+        } else {
+          resp.send({ user, auth: token });
         }
-        else{
-            resp.send({result:'404'})
-        }
+      });
+    } else {
+      resp.send({ result: "404" });
     }
-    else{
-        resp.send({result:'notFilled'})
-    }
-    resp.end();
-})
+  } else {
+    resp.send({ result: "notFilled" });
+  }
+});
 
-app.post('/add-product',async(req,resp)=>{
-    const result = new product(req.body);
-    const data =await result.save();
-    resp.send(data);
-    resp.end();
-})
+app.post("/add-product", async (req, resp) => {
+  const result = new product(req.body);
+  const data = await result.save();
+  resp.send(data);
+});
 
-app.get('/products',async(req,resp)=>{
-    let result =  await  product.find();
-    if(result.length>0){
-        resp.send(result)
-    }else{
-        resp.send({result:'404'});
-    }
-})
-
-app.delete('/delete/:id',async(req,resp)=>{
-    const result =  await product.deleteOne({_id: req.params.id});
+app.get("/products", async (req, resp) => {
+  let result = await product.find();
+  if (result.length > 0) {
     resp.send(result);
-    resp.end();
-})
+  } else {
+    resp.send({ result: "404" });
+  }
+});
 
-app.get('/products/:id',async(req,resp)=>{
-    const result = await product.findOne({_id:req.params.id});
-    if(result){
-        resp.send(result);
-    }else{
-        resp.send({result:'404'})
-    }
- })
+app.delete("/delete/:id", async (req, resp) => {
+  const result = await product.deleteOne({ _id: req.params.id });
+  resp.send(result);
+});
 
+app.get("/products/:id", async (req, resp) => {
+  const result = await product.findOne({ _id: req.params.id });
+  if (result) {
+    resp.send(result);
+  } else {
+    resp.send({ result: "404" });
+  }
+});
+// ------------------------------api to update product data;
+app.put("/update/:id", async (req, resp) => {
+  const result = await product.updateOne(
+    { _id: req.params.id },
+    { $set: req.body }
+  );
+  if (result) {
+    resp.send(result);
+  } else {
+    resp.send({ result: "404" });
+  }
+});
+// ----------------------------api to search data in product
+app.get("/search/:key", async (req, resp) => {
+  const result = await product.find({
+    $or: [
+      { name: { $regex: req.params.key } },
+      { company: { $regex: req.params.key } },
+      { category: { $regex: +req.params.key } },
+      { price: { $regex: +req.params.key } },
+    ],
+  });
+  resp.send(result);
+});
 app.listen(4000);

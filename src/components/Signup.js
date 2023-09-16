@@ -30,7 +30,8 @@ const Signup = () => {
         })
         result = await result.json();
         console.log(result);
-        sessionStorage.setItem('user', JSON.stringify(result));
+        sessionStorage.setItem('user', JSON.stringify(result.result));
+        sessionStorage.setItem('token', JSON.stringify(result.auth));
         if (result) {
             nevigate('/')
         }

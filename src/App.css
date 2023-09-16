@@ -1,5 +1,4 @@
 
-
 /*-----------setup logo ------------- */
 .logoInfi{
   position: absolute;
@@ -126,4 +125,12 @@ footer{
 }
 #btp{
   margin-left: 10px;
+}
+/* ----------search_bar_product ---------*/
+#search_bar_product {
+  width: 25%;
+  height: 2.6em;
+  margin-bottom: 7px;
+  border: 2px solid black;
+  border-radius: 20px;
 }
