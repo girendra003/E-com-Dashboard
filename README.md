@@ -4,10 +4,14 @@
 3. This is all about Signup login and logout dynamiccally
 
 # Quick Look
-<img width="1440" alt="Screenshot 2023-09-10 at 10 27 44 AM" src="https://github.com/GiIrendra/Khulja_SimSim/assets/96494472/05af3f59-b275-45a1-8911-3bb8b8fec703">
 
-<img width="1430" alt="Screenshot 2023-09-10 at 10 29 46 AM" src="https://github.com/GiIrendra/Khulja_SimSim/assets/96494472/b5675e32-f80e-4b7d-a89b-ca44c27e814b">
-<img width="1436" alt="image-2" src="https://github.com/GiIrendra/Khulja_SimSim/assets/96494472/ebc67b46-9d12-4167-a463-ae4f393ae4e9">
+<img width="1440" alt="Screenshot 2023-09-18 at 12 47 11 AM" src="https://github.com/GiIrendra/Khulja_SimSim/assets/96494472/ae2c176a-3a26-443f-9060-aa0018909c8f">
+<img width="1440" alt="Screenshot 2023-09-18 at 12 47 20 AM" src="https://github.com/GiIrendra/Khulja_SimSim/assets/96494472/ce409af8-f6b2-41c0-9796-9c740483a0b1">
+![Uploading Screenshot 2023-09-18 at 12.47.28 AM.png…]()
+<img width="1440" alt="Screenshot 2023-09-18 at 12 42 09 AM" src="https://github.com/GiIrendra/Khulja_SimSim/assets/96494472/401b17fe-bb0a-4b24-9aa6-7f2bc66e940f">
+<img width="1440" alt="Screenshot 2023-09-18 at 12 42 16 AM" src="https://github.com/GiIrendra/Khulja_SimSim/assets/96494472/cee2a4d2-c54b-46df-aca3-d85aebf83470">
+<img width="1440" alt="Screenshot 2023-09-18 at 12 47 28 AM" src="https://github.com/GiIrendra/Khulja_SimSim/assets/96494472/16f6ee12-3e81-4c54-ab7d-acf0f74d67cf">
+
 
 
 # Getting Started with Create React App
