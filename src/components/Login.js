@@ -15,6 +15,7 @@ const Login = () => {
 
 //=----------------confirming data form database------------------------
       const collectData = async()=>{
+        if(email && password){
         const info = await fetch('http://localhost:4000/login',(
           {
             method:'POST',
@@ -36,6 +37,9 @@ const Login = () => {
         else{
           alert ("Please fill all details");
         }
+      }else{
+        alert('Please Enter credentials')
+      }
       }
 
   return (

@@ -23,6 +23,7 @@ const Signup = () => {
 
     //Sending data to database  **************************
     const colletData = async () => {
+        if(name && email && password){
         let result = await fetch('http://localhost:4000/register', {
             method: 'POST',
             body: JSON.stringify({ name, email, password }),
@@ -35,6 +36,9 @@ const Signup = () => {
         if (result) {
             nevigate('/')
         }
+    }else{
+        alert('Please enter credentials');
+    }
 
     }
     //******************************************************* */
