@@ -17,7 +17,11 @@ function Update_Product() {
 
   // ----------------------------------getting details of particular product by passing id as parameter in url
   const getProductDetails = async () => {
-    const result = await fetch(`http://localhost:4000/products/${paramsId.id}`);
+    const result = await fetch(`http://localhost:4000/products/${paramsId.id}`,{
+      headers:{
+        authorization:`bearer ${JSON.parse(sessionStorage.getItem('token'))}`
+        }
+    });
     const data = await result.json();
     setName(data.name);
     setPrice(data.price);
@@ -31,6 +35,7 @@ function Update_Product() {
       method: "PUT", 
       headers: {
         "Content-Type": "application/json", 
+        authorization:`bearer ${JSON.parse(sessionStorage.getItem('token'))}`
       },
       body: JSON.stringify({ name, price, category, company }), 
     });

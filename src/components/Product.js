@@ -11,8 +11,8 @@ export default function Product() {
   const getProducts = async () => {
     const result = await fetch("http://localhost:4000/products",{
       headers:{
-      authorization: JSON.parse(sessionStorage.getItem('token'))
-    }
+      authorization:`bearer ${JSON.parse(sessionStorage.getItem('token'))}`
+      }
     });
     const data = await result.json();
     if(data.length>=1){
@@ -25,6 +25,9 @@ export default function Product() {
   const deleteProduct = async (id) => {
     let result = await fetch(`http://localhost:4000/delete/${id}`, {
       method: "Delete",
+      headers:{
+        authorization:`bearer ${JSON.parse(sessionStorage.getItem('token'))}`
+        }
     });
     result = await result.json();
     if (result) {
@@ -39,7 +42,11 @@ export default function Product() {
   const searchHandle = async(event)=>{
     const key = event.target.value;
     if(key){
-      const result = await fetch(`http://localhost:4000/search/${key}`);
+      const result = await fetch(`http://localhost:4000/search/${key}`,{
+        headers:{
+          authorization:`bearer ${JSON.parse(sessionStorage.getItem('token'))}`
+          }
+      });
       const data=await  result.json();
       if(data)
       setItem(data);

@@ -18,7 +18,10 @@ function AddProduct() {
         // console.log(name, price, category,company);
         const data = await fetch("http://localhost:4000/add-product",({
             method:'POST',
-            headers: {'Content-Type':"application/json"},
+            headers: {
+              'Content-Type':"application/json",
+              authorization:`bearer ${JSON.parse(sessionStorage.getItem('token'))}`
+          },
             body : JSON.stringify ({ name , price, category,userId,company})
         }))
         const result = await data.json();

@@ -10,6 +10,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import AddProduct from './components/AddProduct';
 import Product from './components/Product';
 import UdpateProduct from './components/UdpateProduct';
+import Profile from './components/Admin_Profile';
 function App() {
   
   return (
@@ -21,7 +22,7 @@ function App() {
             <Route path='/' element={<Product/>}/>
             <Route path='/add' element={<AddProduct/>}/>
             <Route path='/update/:id' element={<UdpateProduct/>}/>
-            <Route path='/profile' element={<h1>profile :</h1>}/>
+            <Route path='/profile' element={<Profile/>}/>
             </Route>
             
             <Route path='/signup' element={<SignUp/>}/>
