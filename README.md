@@ -2,8 +2,8 @@
 1. Backend - Nodejs, ExpressJs & MongoDB (MERN Stack)
 2. Frontend - ReactJS
 3. This is an E-com Dashboard which have some features like:
-4.    for autherization :- login, signup and logout etc.
-5.    for dashboard :- add product, remove product, updating products and delete product  dynamiccally from list 😇.
+    for autherization :- login, signup and logout etc.
+    for dashboard :- add product, remove product, updating products and delete product  dynamiccally from list 😇.
 # Quick Look
 <img width="1440" alt="Screenshot 2023-09-18 at 12 42 09 AM" src="https://github.com/GiIrendra/Khulja_SimSim/assets/96494472/401b17fe-bb0a-4b24-9aa6-7f2bc66e940f">
 <img width="1440" alt="Screenshot 2023-09-18 at 12 42 16 AM" src="https://github.com/GiIrendra/Khulja_SimSim/assets/96494472/cee2a4d2-c54b-46df-aca3-d85aebf83470">
