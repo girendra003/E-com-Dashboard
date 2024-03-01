@@ -1,7 +1,7 @@
 # This is a Mern based project and it contaions-
 1. Backend - Nodejs, ExpressJs & MongoDB (MERN Stack)
 2. Frontend - ReactJS
-3. This is an E-com Dashboard which have some features like:
+3. This is an E-com Dashboard which have some features like:{/n}
     for autherization :- login, signup and logout etc.
     for dashboard :- add product, remove product, updating products and delete product  dynamiccally from list 😇.
 # Quick Look
