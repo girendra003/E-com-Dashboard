@@ -24,7 +24,7 @@ const Signup = () => {
     //Sending data to database  **************************
     const colletData = async () => {
         if(name && email && password){
-        let result = await fetch('http://localhost:4000/register', {
+        let result = await fetch('http://localhost:4000/api/users/register', {
             method: 'POST',
             body: JSON.stringify({ name, email, password }),
             headers: { 'Content-Type': 'application/json' }

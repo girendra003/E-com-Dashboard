@@ -9,7 +9,7 @@ export default function Product() {
 
 // -------------------------------------api to get products
   const getProducts = async () => {
-    const result = await fetch("http://localhost:4000/products",{
+    const result = await fetch("http://localhost:4000/api/products/",{
       headers:{
       authorization:`bearer ${JSON.parse(sessionStorage.getItem('token'))}`
       }
@@ -23,7 +23,7 @@ export default function Product() {
   };
 // -------------------------------------api to delete products
   const deleteProduct = async (id) => {
-    let result = await fetch(`http://localhost:4000/delete/${id}`, {
+    let result = await fetch(`http://localhost:4000/api/products/${id}`, {
       method: "Delete",
       headers:{
         authorization:`bearer ${JSON.parse(sessionStorage.getItem('token'))}`
@@ -42,7 +42,7 @@ export default function Product() {
   const searchHandle = async(event)=>{
     const key = event.target.value;
     if(key){
-      const result = await fetch(`http://localhost:4000/search/${key}`,{
+      const result = await fetch(`http://localhost:4000/api/products/search/${key}`,{
         headers:{
           authorization:`bearer ${JSON.parse(sessionStorage.getItem('token'))}`
           }

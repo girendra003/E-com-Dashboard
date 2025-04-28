@@ -16,7 +16,7 @@ function AddProduct() {
         return false;
       }
         // console.log(name, price, category,company);
-        const data = await fetch("http://localhost:4000/add-product",({
+        const data = await fetch("http://localhost:4000/api/products/add",({
             method:'POST',
             headers: {
               'Content-Type':"application/json",

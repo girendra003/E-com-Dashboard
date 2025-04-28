@@ -15,31 +15,36 @@ const Login = () => {
 
 //=----------------confirming data form database------------------------
       const collectData = async()=>{
-        if(email && password){
-        const info = await fetch('http://localhost:4000/login',(
-          {
-            method:'POST',
-            headers:{'Content-Type':'application/json'},
-            body : JSON.stringify({email,password})
-          }
-        )),
+        try{
 
-        data=await  info.json();
-        console.log(data);
-        if(data.user.email===email){
-          sessionStorage.setItem('user',JSON.stringify(data.user));
-          sessionStorage.setItem('token',JSON.stringify(data.auth));
-          navigate('/')
+          if(email && password){
+          const info = await fetch('http://localhost:4000/api/users/login',(
+            {
+              method:'POST',
+              headers:{'Content-Type':'application/json'},
+              body : JSON.stringify({email,password})
+            }
+          )),
+  
+          data=await  info.json();
+          console.log(data);
+          if(data.user.email===email){
+            sessionStorage.setItem('user',JSON.stringify(data.user));
+            sessionStorage.setItem('token',JSON.stringify(data.auth));
+            navigate('/')
+          }
+          else if(data.result==='404'){
+            alert("Invalid Credentials")
+          }
+          else{
+            alert ("Please fill all details");
+          }
+        }else{
+          alert('Please Enter credentials')
         }
-        else if(data.result==='404'){
-          alert("Invalid Credentials")
+        }catch(err){
+          console.log(err);
         }
-        else{
-          alert ("Please fill all details");
-        }
-      }else{
-        alert('Please Enter credentials')
-      }
       }
 
   return (

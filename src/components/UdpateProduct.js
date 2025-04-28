@@ -17,7 +17,7 @@ function Update_Product() {
 
   // ----------------------------------getting details of particular product by passing id as parameter in url
   const getProductDetails = async () => {
-    const result = await fetch(`http://localhost:4000/products/${paramsId.id}`,{
+    const result = await fetch(`http://localhost:4000/api/products/update/${paramsId.id}`,{
       headers:{
         authorization:`bearer ${JSON.parse(sessionStorage.getItem('token'))}`
         }
